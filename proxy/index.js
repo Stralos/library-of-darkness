@@ -23,5 +23,9 @@ app.use(
     changeOrigin: true,
   })
 );
-app.listen(port);
+app.listen(port, () =>
+  console.log(
+    `Proxy server started and listening at http://localhost:${port}`
+  )
+);
 

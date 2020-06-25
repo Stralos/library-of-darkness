@@ -9,5 +9,7 @@ app.get("/greet", (req, res) => {
   res.send({ message: "Hello world from the server!" });
 });
 app.listen(port, () =>
-  console.log(`Example app listening at http://localhost:${port}`)
+  console.log(
+    `Library of darkness server started and listening at http://localhost:${port}`
+  )
 );
