@@ -1,7 +1,11 @@
 import React from 'react';
-import { useFormContext } from 'react-hook-form';
+import { useFormContext, Controller } from 'react-hook-form';
 
 export const withFormContext = (Component: any) => (props: any) => {
-  const { register } = useFormContext();
-  return <Component {...props} ref={register} />;
+  const { control } = useFormContext();
+  const { isGroup, ...rest } = props;
+  if (isGroup) {
+    return <Component {...rest} />;
+  }
+  return <Controller as={Component} {...rest} control={control} />;
 };
