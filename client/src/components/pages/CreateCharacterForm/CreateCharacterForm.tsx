@@ -25,16 +25,14 @@ export const CreateCharacterForm = () => {
           <div> Test form</div>
           <Input name="vice" />
           <InputGroup
-            as={({ value, ...rest }: any) => (
+            render={({ value, ...rest }: any) => (
               <div className={style.attributeSelection}>
                 <Input {...rest} value={3} checked={value === 3} />
                 <Input {...rest} value={2} checked={value === 2} />
                 <Input {...rest} value={1} checked={value === 1} />
               </div>
             )}
-            onChange={([e]: any) => {
-              return Number(e.target.value);
-            }}
+            onChange={([e]: any) => Number(e.target.value)}
             onClick={(e: any) => {
               if (e.target.checked) {
                 setValue(e.target.name, Number(e.target.value) - 1);
@@ -43,8 +41,6 @@ export const CreateCharacterForm = () => {
             name="attributes.intelligence"
             type="radio"
           />
-          {/* <Input name="attributes.intelligence" type="radio" value={1} /> */}
-          {/* <Input name="attributes.intelligence" type="radio" value={2} /> */}
           <button type="submit"> Submit</button>
           <pre style={{ whiteSpace: 'pre-wrap' }}>
             {JSON.stringify(watch())}

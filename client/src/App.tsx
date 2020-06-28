@@ -1,5 +1,5 @@
 import React from 'react';
-import { CreateCharacterForm } from './components/pages/CreateCharacterForm';
+import { CreateCharacterForm } from 'components/pages/CreateCharacterForm';
 
 function App() {
   return (
