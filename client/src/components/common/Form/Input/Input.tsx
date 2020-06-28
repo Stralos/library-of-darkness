@@ -1,8 +1,7 @@
 import React from 'react';
 
 interface Props {
-  name?: string;
-  type?: string;
+  name: string;
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 

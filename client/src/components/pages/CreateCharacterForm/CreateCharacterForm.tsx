@@ -23,7 +23,9 @@ export const CreateCharacterForm = () => {
       {({ watch, setValue }) => (
         <Fragment>
           <div> Test form</div>
-          <Input name="vice" />
+          <Input
+            name="vice"
+          />
           <InputGroup
             render={({ value, ...rest }) => (
               <div className={style.attributeSelection}>
