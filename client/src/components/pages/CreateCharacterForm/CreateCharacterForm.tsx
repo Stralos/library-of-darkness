@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react';
-import { Form, Input, InputGroup } from 'components/common/Form';
+import { Form, Input, InputGroup, Radio } from 'components/common/Form';
 import style from './CreateCharacterForm.module.scss';
 
 interface Character {
@@ -25,21 +25,20 @@ export const CreateCharacterForm = () => {
           <div> Test form</div>
           <Input name="vice" />
           <InputGroup
-            render={({ value, ...rest }: any) => (
+            render={({ value, ...rest }) => (
               <div className={style.attributeSelection}>
-                <Input {...rest} value={3} checked={value === 3} />
-                <Input {...rest} value={2} checked={value === 2} />
-                <Input {...rest} value={1} checked={value === 1} />
+                <Radio {...rest} value={3} checked={value === 3} />
+                <Radio {...rest} value={2} checked={value === 2} />
+                <Radio {...rest} value={1} checked={value === 1} />
               </div>
             )}
-            onChange={([e]: any) => Number(e.target.value)}
-            onClick={(e: any) => {
+            onChange={([e]) => Number(e.target.value)}
+            onClick={(e) => {
               if (e.target.checked) {
                 setValue(e.target.name, Number(e.target.value) - 1);
               }
             }}
             name="attributes.intelligence"
-            type="radio"
           />
           <button type="submit"> Submit</button>
           <pre style={{ whiteSpace: 'pre-wrap' }}>

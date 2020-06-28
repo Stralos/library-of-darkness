@@ -1,11 +1,13 @@
 import React from 'react';
 import { useFormContext, Controller } from 'react-hook-form';
 
-export const withFormContext = (Component: any) => (props: any) => {
+export const withFormContext = <T extends { name: string }>(
+  Component: React.FunctionComponent<T>
+) => (props: T & { isGroup?: boolean }) => {
   const { control } = useFormContext();
   const { isGroup, ...rest } = props;
   if (isGroup) {
-    return <Component {...rest} />;
+    return <Component {...rest as T} />;
   }
-  return <Controller as={Component} {...rest} control={control} />;
+  return <Controller as={Component} {...rest as T} control={control} />;
 };

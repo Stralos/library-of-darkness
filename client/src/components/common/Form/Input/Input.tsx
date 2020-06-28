@@ -1,5 +1,11 @@
 import React from 'react';
 
-export const Input = (props: any) => {
+interface Props {
+  name?: string;
+  type?: string;
+  onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
+}
+
+export const Input = (props: Props) => {
   return <input {...props} />;
 };
