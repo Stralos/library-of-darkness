@@ -1,19 +1,19 @@
-interface InputEvent {
-  target: { value: string; checked?: boolean; name: string };
+interface InputEvent<K extends string> {
+  target: { value: string; checked?: boolean; name: K };
 }
 
-interface RenderProps<T> {
-  onChange?: (e: [InputEvent]) => T;
-  onClick?: (e: InputEvent) => void;
-  name: string;
+interface RenderProps<T, K extends string> {
+  onChange?: (e: [InputEvent<K>]) => T;
+  onClick?: (e: InputEvent<K>) => void;
+  name: K;
   value: T;
 }
 
-interface Props<T> extends RenderProps<T> {
-  render: (props: RenderProps<T> & { isGroup: boolean }) => JSX.Element;
+interface Props<T, K extends string> extends RenderProps<T, K> {
+  render: (props: RenderProps<T, K> & { isGroup: boolean }) => JSX.Element;
 }
 
-export const InputGroup = <T,>(props: Props<T>) => {
+export const InputGroup = <T, K extends string>(props: Props<T, K>) => {
   const { render, ...rest } = props;
   return render({ ...rest, isGroup: true });
 };

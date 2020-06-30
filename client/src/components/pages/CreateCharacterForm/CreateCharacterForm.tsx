@@ -4,7 +4,7 @@ import style from './CreateCharacterForm.module.scss';
 
 interface Character {
   name: string;
-  vice: number;
+  vice: string;
   attributes: {
     intelligence: number;
   };
@@ -17,15 +17,13 @@ export const CreateCharacterForm = () => {
         console.log(data);
       }}
       defaultValues={{
-        vice: 1,
+        vice: 'sloth',
       }}
     >
       {({ watch, setValue }) => (
         <Fragment>
           <div> Test form</div>
-          <Input
-            name="vice"
-          />
+          <Input name="vice" />
           <InputGroup
             render={({ value, ...rest }) => (
               <div className={style.attributeSelection}>
