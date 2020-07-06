@@ -16,7 +16,9 @@ export const Form = <T,>({ children, onSubmit, defaultValues }: Props<T>) => {
   const methods = useForm<T>({ defaultValues });
   return (
     <FormContext {...methods}>
-      <form onSubmit={methods.handleSubmit(onSubmit)}>{children(methods)}</form>
+      <form onSubmit={methods.handleSubmit((data) => onSubmit(data))}>
+        {children(methods)}
+      </form>
     </FormContext>
   );
 };
