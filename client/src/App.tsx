@@ -3,9 +3,9 @@ import { CreateCharacterForm } from 'components/pages/CreateCharacterForm';
 
 function App() {
   return (
-    <div className="App">
+    <div>
       <div>Create Character form</div>
-      <CreateCharacterForm />
+      <CreateCharacterForm onSubmit={alert} />
     </div>
   );
 }
