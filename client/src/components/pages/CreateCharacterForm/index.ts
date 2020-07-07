@@ -1,1 +1,1 @@
-export { CreateCharacterForm } from './CreateCharacterForm';
+export * from './CreateCharacterForm';
