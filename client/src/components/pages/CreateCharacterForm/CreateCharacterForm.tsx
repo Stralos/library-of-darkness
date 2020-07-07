@@ -1,19 +1,8 @@
 import React, { Fragment } from 'react';
 import { Form, Input, InputGroup, Radio } from 'components/common/Form';
+import { Character } from 'models';
+import { DotInput } from './DotInput';
 import style from './CreateCharacterForm.module.scss';
-
-interface Character {
-  name?: string;
-  virtue?: string;
-  vice?: string;
-  concept?: string;
-  clan?: string;
-  legacy?: string;
-  covenant?: string;
-  attributes?: {
-    intelligence?: number;
-  };
-}
 
 export interface Props {
   character?: Character;
@@ -23,20 +12,16 @@ export interface Props {
 export const CreateCharacterForm = (props: Props) => {
   const { onSubmit, character } = props;
   return (
-    <Form<Character>
-      onSubmit={onSubmit}
-      defaultValues={character}
-    >
+    <Form<Character> onSubmit={onSubmit} defaultValues={character}>
       {({ watch, setValue }) => (
         <Fragment>
-          <Input data-testid="input-name" name="name"/>
-          <Input data-testid="input-virtue" name="virtue"/>
+          <Input data-testid="input-name" name="name" />
+          <Input data-testid="input-virtue" name="virtue" />
           <Input data-testid="input-vice" name="vice" />
-          <Input data-testid="input-clan" name="clan"/>
-          <Input data-testid="input-legacy" name="legacy"/>
-          <Input data-testid="input-concept" name="concept"/>
-          <Input data-testid="input-covenant" name="covenant"/>
-
+          <Input data-testid="input-clan" name="clan" />
+          <Input data-testid="input-legacy" name="legacy" />
+          <Input data-testid="input-concept" name="concept" />
+          <Input data-testid="input-covenant" name="covenant" />
           <InputGroup
             render={({ value, ...rest }) => (
               <div className={style.attributeSelection}>
