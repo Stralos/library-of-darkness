@@ -6,7 +6,8 @@
   "author": "Stralos",
   "license": "MIT",
   "scripts": {
-    "start": "node ./index.js"
+    "start": "node ./index.js",
+    "dev": "node ./index.js"
   },
   "dependencies": {
     "express": "^4.17.1",

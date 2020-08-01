@@ -4,7 +4,8 @@
   "description": "reverse proxy for orchestrating library of darkness",
   "main": "index.js",
   "scripts": {
-    "start": "node ./index.js"
+    "start": "node ./index.js",
+    "dev": "node ./index.js"
   },
   "author": "Stralos",
   "license": "ISC",
