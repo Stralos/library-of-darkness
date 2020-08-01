@@ -1,5 +1,6 @@
 import React from 'react';
 import { InputGroup, Radio } from 'components/common/Form';
+import style from './DotInput.module.scss';
 
 export interface Props {
   name: string;
@@ -15,7 +16,7 @@ export const DotInput = (props: Props) => {
             <Radio {...rest} value={i} key={i} checked={value == i} />
           );
         }
-        return <div>{inputs}</div>;
+        return <div className={style.inputGroup}>{inputs.reverse()}</div>;
       }}
       name={props.name}
     />

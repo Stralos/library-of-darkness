@@ -9,3 +9,16 @@
     }
   }
 }
+
+.page {
+  display: flex;
+  justify-content: center;
+}
+
+.characterProfile {
+  display: flex;
+  .characterTrait {
+    display: flex;
+    flex-direction: column;
+  }
+}
