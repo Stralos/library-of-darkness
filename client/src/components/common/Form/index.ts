@@ -1,4 +1,5 @@
-export { Form } from './Form';
-export { Input } from './Input';
-export { Radio } from './Radio';
-export { InputGroup } from './InputGroup';
+export * from './Form';
+export * from './Input';
+export * from './Radio';
+export * from './InputGroup';
+export * from './Fields';

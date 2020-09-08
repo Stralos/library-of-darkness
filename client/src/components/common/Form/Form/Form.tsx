@@ -6,21 +6,26 @@ import {
   DeepPartial,
 } from 'react-hook-form';
 
-interface Props<T> {
+interface RenderProps<T> {
   defaultValues?: DeepPartial<T>;
   onSubmit: (props: T) => void;
   children: (props: FormContextValues<T>) => ReactNode;
 }
 
-export const Form = <T,>({ children, onSubmit, defaultValues }: Props<T>) => {
+export const Form = <T,>({
+  children,
+  onSubmit,
+  defaultValues,
+}: RenderProps<T>) => {
   const methods = useForm<T>({ defaultValues });
+
   return (
     <FormContext {...methods}>
       <form
         onSubmit={methods.handleSubmit((data) => onSubmit(data))}
         autoComplete="off"
       >
-        {children(methods)}
+        {children({ ...methods })}
       </form>
     </FormContext>
   );
