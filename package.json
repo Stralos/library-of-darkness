@@ -19,8 +19,6 @@
   "homepage": "https://github.com/Stralos/library-of-darkness#readme",
   "private": true,
   "workspaces": [
-    "client",
-    "proxy",
-    "server"
+    "packages/*"
   ]
 }
