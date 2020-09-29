@@ -16,14 +16,14 @@ export const Form = <T,>({
   children,
   onSubmit,
   defaultValues,
-}: RenderProps<T>) => {
+}: RenderProps<T>): JSX.Element => {
   const methods = useForm<T>({ defaultValues });
 
   return (
     <FormContext {...methods}>
       <form
         onSubmit={methods.handleSubmit((data) => onSubmit(data))}
-        autoComplete="off"
+        autoComplete='off'
       >
         {children({ ...methods })}
       </form>
