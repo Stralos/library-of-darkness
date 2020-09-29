@@ -22,6 +22,7 @@
     "packages/*"
   ],
   "devDependencies": {
+    "@tsconfig/recommended": "^1.0.1",
     "@typescript-eslint/eslint-plugin": "^4.1.0",
     "@typescript-eslint/parser": "^4.1.0",
     "eslint": "6.6.0",
@@ -36,5 +37,8 @@
     "lint-staged": "^10.3.0",
     "prettier": "^2.1.1",
     "typescript": "3.9.7"
+  },
+  "dependencies": {
+    "source-map-support": "^0.5.19"
   }
 }

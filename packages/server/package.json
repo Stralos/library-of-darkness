@@ -6,7 +6,8 @@
   "author": "Stralos",
   "license": "MIT",
   "scripts": {
-    "start": "node ./src/index.js",
+    "build": "tsc",
+    "start": "node -r source-map-support/register ./dist/index.js",
     "dev": "nodemon ./src/index.js"
   },
   "dependencies": {
