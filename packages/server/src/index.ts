@@ -8,7 +8,7 @@ const app = express();
 app.use(helmet());
 app.use(morgan('combined'));
 app.get('/greet', (_, res) => {
-  res.send({ message: 'Hello world from the server!' });
+  res.send({ message: 'Hello world from the server' });
 });
 app.listen(port, () =>
   console.log(

@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node -r source-map-support/register ./dist/index.js",
     "build": "tsc",
-    "dev": "nodemon ./src/index.js"
+    "dev": "ts-node-dev"
   },
   "author": "Stralos",
   "license": "ISC",
@@ -16,7 +16,5 @@
     "http-proxy-middleware": "^1.0.4",
     "morgan": "^1.10.0"
   },
-  "devDependencies": {
-    "nodemon": "^2.0.4"
-  }
+  "devDependencies": {}
 }
